@@ -1,0 +1,6 @@
+/home/guido/Documents/Github/FIUBA-TSE/tdse-tpf_2-03/CMakeFiles/tdse-tpf_2-03.dir
+/home/guido/Documents/Github/FIUBA-TSE/tdse-tpf_2-03/CMakeFiles/edit_cache.dir
+/home/guido/Documents/Github/FIUBA-TSE/tdse-tpf_2-03/CMakeFiles/rebuild_cache.dir
+/home/guido/Documents/Github/FIUBA-TSE/tdse-tpf_2-03/cmake/stm32cubemx/CMakeFiles/STM32_Drivers.dir
+/home/guido/Documents/Github/FIUBA-TSE/tdse-tpf_2-03/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+/home/guido/Documents/Github/FIUBA-TSE/tdse-tpf_2-03/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir
