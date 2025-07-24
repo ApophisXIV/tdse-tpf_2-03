@@ -1,5 +1,5 @@
 /**
- * @file A498_attributes.h
+ * @file fsm_template_attributes.h
  *
  * @authors
  * Guido Rodriguez (guerodriguez@fi.uba.ar)
@@ -15,8 +15,8 @@
  *
  */
 
-#ifndef A498_ATTRIBUTES_H
-#define A498_ATTRIBUTES_H
+#ifndef FSM_ATTRIBUTES_H
+#define FSM_ATTRIBUTES_H
 
 /* -------------------------------- Includes -------------------------------- */
 #include "main.h"
@@ -33,66 +33,30 @@ extern "C" {
 /* ------------------------------ Public macros ----------------------------- */
 
 /* ---------------------------- ¨Public constants --------------------------- */
-#define A498_MAX_INSTANCES 1
+#define FSM_MAX_INSTANCES 4
 
 /* ------------------------------ Public enums ------------------------------ */
 typedef enum {
-    // EV_A498_CONFIG, //TODO: Revisar si permito configuracion on-the-fly
-    EV_A498_SLEEP,
-    EV_A498_WAKE_UP,
-    EV_A498_RESET,
-    EV_A498_ENABLE,
-    EV_A498_DISABLE,
-    EV_A498_MAKE_CLOCKWISE_STEP,
-    EV_A498_MAKE_COUNTERCLOCKWISE_STEP,
-    A498_NO_EVENT,
-} A498_event_id_t;
-
-typedef enum {
     ST_STOPED,
     ST_ERROR,
-    ST_A498_IDLE,
-    ST_A498_RESET,
-    ST_A498_SLEEP,
-    ST_A498_ENABLED,
-    ST_A498_DISABLED,
-    ST_A498_STEPPING_CLOCKWISE,
-    ST_A498_STEPPING_COUNTERCLOCKWISE,
-} A498_states_t;
+    ST_A,
+    ST_B,
+    ST_C,
+} fsm_states_t;
 
 typedef enum {
-    A498_DIRECTION_CLOCKWISE,
-    A498_DIRECTION_COUNTERCLOCKWISE
-} A498_direction_t;
-
-typedef enum {
-    A498_STEP_MODE_FULL,
-    A498_STEP_MODE_HALF,
-    A498_STEP_MODE_QUARTER,
-    A498_STEP_MODE_EIGHTH,
-    A498_STEP_MODE_SIXTEENTH
-} A498_step_mode_t;
+    EV_1,
+    EV_2,
+    EV_3,
+} fsm_event_id_t;
 
 /* ---------------------------- Public datatypes ---------------------------- */
 typedef struct {
-    // GPIO pins
-    GPIO_t step_gpio;
-    GPIO_t direction_gpio;
-    GPIO_t enable_gpio;
-    GPIO_t reset_gpio;
-    GPIO_t sleep_gpio;
-    GPIO_t step_config_a_gpio;
-    GPIO_t step_config_b_gpio;
-    GPIO_t step_config_c_gpio;
+    uint8_t var_1;
+    bool flag;
+} fsm_cfg_t;
 
-    // Configuration parameters
-    A498_step_mode_t step_mode;
-    uint16_t step_delay_us;
-    uint16_t steps_per_revolution;
-} A498_cfg_t;
-
-typedef uint8_t A498_id_t;
-
+typedef uint8_t fsm_id_t;
 /* -------------------- External public data declarations ------------------- */
 
 /* ----------------------- Public function prototypes ----------------------- */
@@ -104,4 +68,4 @@ typedef uint8_t A498_id_t;
 }
 #endif    // __cplusplus
 
-#endif    // A498_ATTRIBUTES_H
+#endif    // FSM_ATTRIBUTES_H
